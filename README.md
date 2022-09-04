@@ -6,6 +6,8 @@ The bookmark server can't handle over 1 request.
 
 If user try to use bookmark server URI (ex: "https://ud303-loukei-bookmarksever.herokuapp.com/") as bookmark, server will try to make requests for himself.
 
+![Demo](IMG/chrome_1IzclsC6jS.png)
+
 ``` python
 def __check_longuri(self, longuri:str)->bool:
     "Check longuri, if uri exist, return true"
@@ -18,6 +20,6 @@ def __check_longuri(self, longuri:str)->bool:
         return False
 ```
 
-Since our server can't handle over 1 request, the server will crash instanly.
+Since our server can't handle over 1 request, the server will crash instantly.
 
 ## How to fix it?
