@@ -23,3 +23,7 @@ def __check_longuri(self, longuri:str)->bool:
 Since our server can't handle over 1 request, the server will crash instantly.
 
 ## How to fix it?
+
+## Reference
+
+- [ud303 - HTTP in the Real World](https://learn.udacity.com/courses/ud303/lessons/f5e2f7c1-d0ce-4738-b985-1f70fb61817d/concepts/461f4efb-c3c9-463d-9057-37e63ac879e8)
