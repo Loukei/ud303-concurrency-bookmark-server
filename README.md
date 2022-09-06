@@ -68,7 +68,7 @@ Another example is the process is like a news paper, the thread    is like a per
 
 Concurrency means we split our job into several different task, they share the same resource at a time. When CPU running a concurrency task, it picks one task, running it, then switch to another task, so it looks like those task are running parallel but not.
 
-### What we need concurrency in this case?
+### Why we need concurrency in this case?
 
 #TODO
 
