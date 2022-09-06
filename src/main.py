@@ -8,6 +8,8 @@ from http.server import SimpleHTTPRequestHandler, HTTPServer
 from typing import Dict
 from urllib.parse import parse_qs
 import requests
+import threading
+from socketserver import ThreadingMixIn
 
 # Use Dict to save all shortname: longuri pair
 memory:Dict = {
@@ -90,6 +92,9 @@ page_400:str = """
     </bod>
 </html>
 """
+
+class ThreadHTTPServer(ThreadingMixIn, HTTPServer):
+    "This is an HTTPServer that supports thread-based concurrency."
 
 class BookMarkServerHandler(SimpleHTTPRequestHandler):
     def do_GET(self) -> None:
@@ -180,7 +185,8 @@ class BookMarkServerHandler(SimpleHTTPRequestHandler):
 def main():
     port:int = int(os.environ.get('PORT',8000))
     server_address = ('', port)
-    httpd:HTTPServer = HTTPServer(server_address=server_address,RequestHandlerClass=BookMarkServerHandler)
+    # httpd:HTTPServer = HTTPServer(server_address=server_address,RequestHandlerClass=BookMarkServerHandler)
+    httpd:HTTPServer = ThreadHTTPServer(server_address=server_address,RequestHandlerClass=BookMarkServerHandler)
     httpd.serve_forever()
     pass
 
