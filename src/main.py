@@ -5,8 +5,7 @@
 
 import os
 from http.server import SimpleHTTPRequestHandler, HTTPServer
-from typing import List, Dict
-from urllib import response
+from typing import Dict
 from urllib.parse import parse_qs
 import requests
 
